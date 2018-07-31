@@ -1,0 +1,58 @@
+<!--pages/index/details/details.wxml-->
+<wxs module="filter" src="../../../filter/filter.wxs"></wxs>
+
+<view>
+    <view class="movie-brief clearfix">
+        <view class="movie-title">
+            <text class="ch-name">{{data.name}}</text>
+            <text class="en-name">{{data.nameEn}}</text>
+        </view>
+        <view class="rest-brief">
+            <text wx:if="{{data.isEggHunt}}"><text style="color: green">有彩蛋</text> - </text>
+            <text>{{data.mins}}</text>
+            <view>
+                <text>{{filter.arrFormat(data.type || [], '/')}}</text>
+            </view>
+            <view>
+                <text>{{filter.dateTransCh(data.releaseDate || '')}}{{data.releaseArea}}上映</text>
+            </view>
+            <view wx:if="{{data.commentSpecial}}" style="color: rgb(243, 156, 24)">
+                <text class="big-comma">“</text>{{data.commentSpecial}}
+            </view>
+            <view>
+                <view wx:if="{{data.isIMAX}}" class="blue-border">中国巨幕</view>
+                <view wx:if="{{data.isIMAX3D}}" class="blue-border">IMAX 3D</view>
+                <view wx:if="{{data.is3D}}" class="blue-border">3D</view>
+            </view>
+            <view class="overall-rating" wx:if="{{data.overallRating > 0}}">{{data.overallRating}}</view>
+        </view>
+        <view class="left-video-img">
+            <image src="{{data.img}}" class="image-item" mode="widthFix"></image>
+            <view class="iconfont icon-play"/>
+        </view>
+    </view>
+    <view class="movie-content" wx:if="{{data.story}}" bindtap="toggleFold">
+        <view wx:if="{{isFold}}" class="movie-detail is-fold">剧情：{{data.story}}</view>
+        <view wx:else class="movie-detail">剧情：{{data.story}}</view>
+        <view wx:if="{{isFold}}" class="iconfont icon-down"></view>
+        <view wx:else class="iconfont icon-up"></view>
+    </view>
+    <view class="actor-item clearfix">
+        <view class="actor-box pull-left">
+            <view class="title">导演</view>
+            <image src="{{data.director.img}}" class="director-img actor-img" center></image>
+            <view class="ch-name text-center">{{data.director.name}}</view>
+            <view class="en-name text-center">{{data.director.nameEn}}</view>
+        </view>
+        <scroll-view scroll-x="true" class="actor-box pull-left">
+            <view class="title">主要演员</view>
+            <view wx:for="{{data.actors}}" wx:key="index" wx:for-item="item" class="each-box">
+                <image src="{{item.img}}" class="actor-img" center></image>
+                <view class="ch-name text-center">{{item.name}}</view>
+                <view class="en-name text-center">{{item.nameEn}}</view>
+                <view class="role-name text-center">{{item.roleName}}</view>
+            </view>
+        </scroll-view>
+    </view>
+</view>
+

@@ -1,0 +1,27 @@
+<!--pages/article/article.wxml-->
+<view class="container">
+  <view class="topSection">
+    最近在读
+  </view>
+  <view class="middleSection">
+    <view class="kind-list">
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle" id="{{item.id}}">
+            {{item.name}}
+          </view>
+          <view class="kind-list-item-bd" id="{{item.id}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <navigator url="authorname/authorname" class="navigator">
+                  <view class="navigator-text">{{page}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,2 @@
+<!--pages/aboutme/shopping/shopping.wxml-->
+<text bindtap="addNewBuy">新增</text>

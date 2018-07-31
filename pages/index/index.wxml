@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="top-tab">
+    <view class="top-tab-item {{currentTopItem==idx ? 'active' : ''}}" wx:for="{{topTabItem}}"  wx:key="{{index}}" wx:for-index="idx" data-idx="{{idx}}" bindtap="switchTab">
+      {{item}}
+    </view>
+  </view>
+  <view class="content" wx:if="{{currentTopItem == 0}}">
+    <swiper class="content-swiper" indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.url}}" class="swiper-img" bindtap="skipDetail" id="{{item.id}}"></image>
+        </swiper-item>
+      </block>  
+    </swiper>
+    <view class="article-part">
+      <text class="line-title" bindtap="goHome">{{motto}}</text>
+      <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}" class="scroll-content" wx:for="{{articleArr}}" wx:key="{{index}}">
+        <view id="{{item.id}}" class="scroll-view-item">
+          <text class="m-score">豆瓣评分: {{item.score}}</text>
+          <detail class="detail-content">{{item.detail}}</detail>
+          <view class="author-bar">
+            <author class="author-name">作者: {{item.author}}</author>
+            <text class="create-time">{{item.time}}</text>
+          </view>
+          <view class="share-bar">
+            <view-item class="share-bar-item" bindtap="goShare">
+              <i class="iconfont icon-share"> 分享</i>
+            </view-item>
+            <view-item class="share-bar-item" bindtap="addComment" id="{{item.id}}">
+              <i class="iconfont icon-comment"> 评论</i>
+            </view-item>
+            <view-item class="share-bar-item" bindtap="clickLike">
+              <i class="iconfont icon-like"> 赞</i>
+            </view-item>        
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <scroll-view scroll-x="true" class="recent-tab" wx:else>
+      <view wx:for="{{recentMovies}}" wx:key="{{index}}" class="movie-item" data-idx="{{item.movieId}}" bindtap="movieDetail">
+        <image src="{{item.img}}" class="img-item" />
+        <text class="movie-score" wx:if="{{item.ratingFinal > 0}}">{{item.ratingFinal}}</text>
+        <text class="on-screen" wx:if="{{!item.isNew}}">预售</text>
+        <text class="is-imax" wx:if="{{item.isIMAX && !item.isIMAX3D}}">IMAX</text>
+        <text class="is-imax" wx:if="{{item.isIMAX3D && item.isIMAX3D}}">IMAX 3D</text>
+        <text class="movie-title">{{item.titleCn}}</text>
+      </view>
+  </scroll-view>
+</view>
+<view class="input-cover" hidden="{{flag ? false : true}}">
+  <view class="cover"></view>
+  <view class="comment-bar" >
+    <view class="comment-input">
+      <input placeholder="这是一个可以自动聚焦的input" auto-focus/>
+    </view>
+    <text class="comment-send" bindtap="sendComment" commentId>发送</text>
+  </view>
+</view>
+<view>
+  <modal title="modal 对话框" hidden="{{modalHidden}}" confirm-text="确定" cancel-text="取消"
+  bindconfirm="modalBindaconfirm" bindcancel="modalBindcancel">您好，我是 modal 对话框</modal>
+</view>

@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/article/article",
+    "pages/other/other",
+    "pages/aboutme/aboutme",
+    "pages/index/details/details",
+
+    "pages/aboutme/shopping/shopping",
+    "pages/aboutme/shopping/newProduct/newProduct",
+
+    "pages/article/authorname/authorname"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#d4237a",
+    "borderColor": "black",
+    "backgroundColor": "#fff",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/movie.png",
+      "selectedIconPath": "images/movieSelect.png",
+      "text": "电影"
+    }, {
+      "pagePath": "pages/article/article",
+      "iconPath": "images/book.png",
+      "selectedIconPath": "images/bookSelect.png",
+      "text": "书"
+    }, {
+      "pagePath": "pages/other/other",
+      "iconPath": "images/life.png",
+      "selectedIconPath": "images/lifeSelect.png",
+      "text": "杂七杂八"
+    }, {
+      "pagePath": "pages/aboutme/aboutme",
+      "iconPath": "images/me.png",
+      "selectedIconPath": "images/meSelect.png",
+      "text": "我"
+    }]
+  }
+}

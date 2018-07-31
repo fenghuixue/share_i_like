@@ -1,0 +1,138 @@
+/* pages/index/details/details.wxss */
+@import "../../../css/iconfont.wxss";
+@import "../../../css/common.wxss";
+
+page {
+    background: #f6f4f6;
+}
+.movie-brief {
+    position: relative;
+    background: #fff;
+    width:100%;
+}
+.movie-title {
+    background: radial-gradient(rgb(58, 80, 20), rgb(126, 79, 17), rgb(10, 49, 20));
+    color: #fff;
+    font-size: 18px;
+    line-height: 20px;
+    height: 38px;
+    padding: 28px 8px 8px 0;
+}
+.movie-title .ch-name,
+.movie-title .en-name {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: calc(100% - 153px);
+    float: right;
+}
+.movie-title .en-name {
+    font-size: 14px; 
+}
+.rest-brief {
+    position: relative;
+    width: calc(100% - 163px);
+    height: 120px;
+    float: right;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 10px;
+}
+.left-video-img {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+.image-item {
+    width: 130px;
+    border: 2px solid #fff;
+}
+.icon-play {
+    color: #fff;
+    font-size: 50px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-25px;
+    margin-left:-25px;
+}
+.big-comma {
+    display: inline-block;
+    transform: scale(2.5) translateY(4px);
+    padding-right: 5px;
+}
+.blue-border {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 5px;
+    padding: 0 3px;
+    line-height: 1.5;
+    border: 1px solid rgb(61, 123, 158);
+}
+.overall-rating {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    right: 10px;
+    top: -20px;
+    background: rgb(23, 116, 23);
+    color: #fff;
+}
+.movie-content {
+    text-align: center;
+    background: #fff;
+    margin-top: 10px;
+}
+.icon-down,
+.icon-up {
+    color: #999;
+    font-size: 12px;
+    transform: scale(0.8, 0.7);
+    padding-bottom: 10px; 
+}
+.movie-detail {
+    font-size: 14px;
+    padding: 10px 10px 0 10px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+.is-fold {
+    overflow: hidden; 
+    text-overflow: clip;
+    display: -webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+}
+.actor-item {
+    background: #fff;
+    height: 200px;
+    white-space: nowrap;
+}
+.actor-item .actor-box {
+    padding: 10px;
+    display: inline-block;
+}
+.actor-box .ch-name,
+.actor-box .en-name,
+.actor-box .role-name {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.actor-box .each-box {
+    display: inline-block;
+}
+.actor-img {
+    width: 100px;
+    height: 100px;
+    margin: 10px 0;
+    padding-right: 10px;
+}
+.director-img {
+    border-right: 1px solid #999;
+}

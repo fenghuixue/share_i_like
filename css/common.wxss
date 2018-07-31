@@ -1,0 +1,29 @@
+.clearfix {
+    clear: both;
+}
+.clearfix:after {
+    content: ' ';
+    clear: both;
+    display: block;
+    visibility: visible;
+    height: 0;
+    overflow: hidden;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}

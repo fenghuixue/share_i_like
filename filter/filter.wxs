@@ -1,0 +1,24 @@
+/**
+ * @file filter data
+ * @author zq6
+ */
+
+var arrFormat = function(arr, splitStr) {
+    return arr.join(splitStr);
+}
+var dateTransCh = function(str) {
+    return +str.slice(0, 4) + '年' + +str.slice(4, 6) + '月' + +str.slice(6, 8) + '日';
+}
+var dateFormat = function(dateTime) {
+    var date = getDate(dateTime);
+    Y = date.getFullYear() + '-';
+    M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    D = date.getDate() + '-';
+    return Y + M + D;
+} 
+
+module.exports = {
+    arrFormat: arrFormat,
+    dateTransCh: dateTransCh,
+    dateFormat: dateFormat
+};
