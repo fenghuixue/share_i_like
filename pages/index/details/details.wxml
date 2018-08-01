@@ -37,22 +37,38 @@
         <view wx:if="{{isFold}}" class="iconfont icon-down"></view>
         <view wx:else class="iconfont icon-up"></view>
     </view>
-    <view class="actor-item clearfix">
-        <view class="actor-box pull-left">
-            <view class="title">导演</view>
-            <image src="{{data.director.img}}" class="director-img actor-img" center></image>
-            <view class="ch-name text-center">{{data.director.name}}</view>
-            <view class="en-name text-center">{{data.director.nameEn}}</view>
-        </view>
-        <scroll-view scroll-x="true" class="actor-box pull-left">
-            <view class="title">主要演员</view>
-            <view wx:for="{{data.actors}}" wx:key="index" wx:for-item="item" class="each-box">
-                <image src="{{item.img}}" class="actor-img" center></image>
-                <view class="ch-name text-center">{{item.name}}</view>
-                <view class="en-name text-center">{{item.nameEn}}</view>
-                <view class="role-name text-center">{{item.roleName}}</view>
+    <view class="outer-box clearfix">
+        <scroll-view scroll-x="true" class="actor-item">
+            <view class="actor-box pull-left">
+                <view class="title">导演</view>
+                <image src="{{data.director.img}}" class="director-img actor-img" center></image>
+                <view class="ch-name text-center">{{data.director.name}}</view>
+                <view class="en-name text-center">{{data.director.nameEn}}</view>
+            </view>
+            <view class="actor-box pull-left">
+                <view class="title">主要演员</view>
+                <view wx:for="{{data.actors}}" wx:key="index" wx:for-item="item" class="each-box">
+                    <image src="{{item.img}}" class="actor-img" center></image>
+                    <view class="ch-name text-center">{{item.name}}</view>
+                    <view class="en-name text-center">{{item.nameEn}}</view>
+                    <view wx:if="{{item.roleName}}" class="role-name text-center">饰:{{item.roleName}}</view>
+                </view>
             </view>
         </scroll-view>
+        <view class="go-to-all" bindtap="allActor">
+            全部
+            <i class="iconfont icon-left"></i>
+        </view>
+    </view>
+    <view class="outer-box clearfix">
+        <view class="title">直播</view>
+        <view>
+            <image></image>
+        </view>
+        <view class="go-to-all">
+            全部
+            <i class="iconfont icon-left"></i>
+        </view>
     </view>
 </view>
 

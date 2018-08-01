@@ -108,24 +108,39 @@ page {
     -webkit-box-orient:vertical;
     -webkit-line-clamp:2;
 }
-.actor-item {
+.outer-box {
+    margin-top: 10px;
+    width: 100%;
+    position: relative;
     background: #fff;
-    height: 200px;
+    padding:10px;
+}
+.actor-item {
+    height: 230px;
     white-space: nowrap;
 }
 .actor-item .actor-box {
-    padding: 10px;
+    padding-right:10px;
     display: inline-block;
+}
+.actor-box:nth-child(2) {
+    width: calc(100% - 158px);
 }
 .actor-box .ch-name,
 .actor-box .en-name,
 .actor-box .role-name {
-    font-size: 12px;
+    font-size: 14px;
+    width: 100px;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .actor-box .each-box {
     display: inline-block;
+    vertical-align:top;
+}
+.actor-box .each-box:last-child {
+    padding-right: 10px;
 }
 .actor-img {
     width: 100px;
@@ -135,4 +150,15 @@ page {
 }
 .director-img {
     border-right: 1px solid #999;
+}
+
+.go-to-all {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size:18px;
+    color:#999;
+}
+.go-to-all .icon-left {
+    font-size: 16px;
 }

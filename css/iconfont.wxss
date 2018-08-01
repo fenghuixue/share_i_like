@@ -34,6 +34,8 @@
 .icon-down:before { content: "\e61c"; }
 
 .icon-up:before { content: "\e620"; }
+.icon-left:before { content: "\e623"; }
+.icon-right:before { content: "\e622"; }
 
 .icon-play:before { content: "\e801"; }
 
