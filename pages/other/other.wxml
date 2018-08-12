@@ -1,2 +1,12 @@
 <!--pages/other/other.wxml-->
-<text>pages/other/other.wxml</text>
+
+<text>城市定向组件</text>
+
+<view>
+    <checkbox value="{{cityMenu.name}}" checked bindChange="checkAll"/>{{cityMenu.name}}
+    <checkbox-group bindchange="checkboxChange">
+        <label class="checkbox" wx:for="{{cityMenu.groups}}" wx:key="{{item.id}}">
+            <checkbox value="{{item.id}}" checked/>{{item.name}}
+        </label>
+    </checkbox-group>
+</view>
